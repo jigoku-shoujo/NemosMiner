@@ -4,6 +4,7 @@ $Path = ".\Bin\NVIDIA-TPruvotx64\ccminer-x64.exe"
 $Uri = "https://github.com/MSFTserver/ccminer/releases/download/2.2.5-rvn/ccminer-x64-2.2.5-rvn-cuda9.7z"
 
 $Commands = [PSCustomObject]@{
+    "lyra2z" = " -d $SelGPUCC --api-remote --api-allow=0/0 --submit-stale" #Lyra2z
     #"phi" = " -d $SelGPUCC" #Phi
     #"bitcore" = " -d $SelGPUCC" #Bitcore
     #"jha" = " -d $SelGPUCC" #Jha
@@ -19,7 +20,6 @@ $Commands = [PSCustomObject]@{
     #"keccak" = "" #Keccak
     #"lbry" = " -d $SelGPUCC" #Lbry
     #"lyra2v2" = "" #Lyra2RE2
-    "lyra2z" = " -d $SelGPUCC --api-remote --api-allow=0/0 --submit-stale" #Lyra2z
     #"myr-gr" = "" #MyriadGroestl
     #"neoscrypt" = " -d $SelGPUCC" #NeoScrypt
     #"nist5" = "" #Nist5

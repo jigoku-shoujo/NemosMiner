@@ -4,6 +4,7 @@ $Path = ".\Bin\NVIDIA-ccminerAlexis78poly\ccminer.exe"
 $Uri = "https://github.com/nemosminer/ccminerpolytimos/releases/download/Alexis78-1.0/ccminer-polytimos.7z"
 
 $Commands = [PSCustomObject]@{
+    "poly" = " -d $SelGPUCC" #polytimos
     #"hsr" = " -d $SelGPUCC" #Hsr
     #"bitcore" = "" #Bitcore
     #"blake2s" = " -d $SelGPUCC" #Blake2s
@@ -13,7 +14,6 @@ $Commands = [PSCustomObject]@{
     #"veltor" = " -i 23 -d $SelGPUCC" #Veltor
     #"decred" = "" #Decred
     #"equihash" = "" #Equihash
-    "poly" = " -d $SelGPUCC" #polytimos
     #"ethash" = "" #Ethash
     #"groestl" = "" #Groestl
     #"hmq1725" = "" #hmq1725
