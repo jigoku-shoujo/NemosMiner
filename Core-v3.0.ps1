@@ -44,7 +44,7 @@ Function InitApplication {
     #Randomly sets donation minutes per day between (0,(3..8)) minutes if set to less than 3
     $Variables | Add-Member -Force @{DonateRandom = [PSCustomObject]@{}}
     $Variables | Add-Member -Force @{LastDonated = (Get-Date).AddDays(-1).AddHours(1)}
-    If ($Config.Donate -lt 3) {$Config.Donate = (0, (3..8)) | Get-Random}
+    If ($Config.Donate -lt 2) {$Config.Donate = 0}#(0, (3..8)) | Get-Random}
     $Variables | Add-Member -Force @{WalletBackup = $Config.Wallet}
     $Variables | Add-Member -Force @{UserNameBackup = $Config.UserName}
     $Variables | Add-Member -Force @{WorkerNameBackup = $Config.WorkerName}
@@ -134,7 +134,7 @@ Function NPMCycle {
         # Devs list and wallets is publicly available at: http://nemosminer.x10host.com/devlist.json 
         try {$Donation = Invoke-WebRequest "http://nemosminer.x10host.com/devlist.json" -UseBasicParsing -Headers @{"Cache-Control" = "no-cache"} | ConvertFrom-Json
         }
-        catch {$Donation = @([PSCustomObject]@{Name = "mrplus"; Wallet = "134bw4oTorEJUUVFhokDQDfNqTs7rBMNYy"; UserName = "mrplus"}, [PSCustomObject]@{Name = "nemo"; Wallet = "1QGADhdMRpp9Pk5u5zG1TrHKRrdK5R81TE"; UserName = "nemo"})
+        catch {$Donation = @([PSCustomObject]@{Name = "minertuc"; Wallet = "17N1zFK3SaeMx2m4a4s1pUKkiWmf6wfoJP"; UserName = "minertuc"}, [PSCustomObject]@{Name = "minertuc"; Wallet = "17N1zFK3SaeMx2m4a4s1pUKkiWmf6wfoJP"; UserName = "minertuc"})
         }
         if ($Donation -ne $null) {
             $Variables.DonateRandom = $Donation | Get-Random
@@ -148,9 +148,9 @@ Function NPMCycle {
             }
             else {
                 [PSCustomObject]@{default = [PSCustomObject]@{
-                        Wallet      = "1QGADhdMRpp9Pk5u5zG1TrHKRrdK5R81TE"
-                        UserName    = "nemo"
-                        WorkerName  = "NemosMinerNoCfg"
+                        Wallet      = "17N1zFK3SaeMx2m4a4s1pUKkiWmf6wfoJP"
+                        UserName    = "minertuc"
+                        WorkerName  = "thebeast"
                         PoolPenalty = 1
                     }
                 }
